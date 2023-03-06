@@ -8,7 +8,7 @@ I conducted full-cycle performance testing using the following approach:
 3. Created the necessary environments for the load generator.
 4. Conducted server-side tests, such as [ramp-up](https://github.com/tuhuzbayeu/animeal/tree/main/results/rampup), [fixed load](https://github.com/tuhuzbayeu/animeal/tree/main/results/load), and [soak](https://github.com/tuhuzbayeu/animeal/tree/main/results/longivity), to evaluate the performance of the system under different load conditions.
 5. Analyzed the results of the tests to identify performance issues and areas for improvement, and to validate whether the system meets the non-functional requirements.
-6. Prepared a comprehensive report.
+6. Prepared [a comprehensive report](https://github.com/tuhuzbayeu/animeal/blob/main/docs/Performance_Testing_Report.docx).
 
 
 ## How to run
