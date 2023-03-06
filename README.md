@@ -14,5 +14,5 @@ I conducted full-cycle performance testing using the following approach:
 ## How to run
 Enter the following command in your terminal/console:
 ```
-jmeter -n -t ../../scripts/script.jmx -p ../../scripts/.properties
+./jmeter/bin/jmeter -n -t ../../scripts/script.jmx -p ../../scripts/.properties
 ```
