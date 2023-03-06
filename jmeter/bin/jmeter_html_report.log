@@ -1,0 +1,131 @@
+2023-02-08 11:36:07,053 INFO o.a.j.u.JMeterUtils: Setting Locale to en_US
+2023-02-08 11:36:07,053 INFO o.a.j.JMeter: Loading user properties from: user.properties
+2023-02-08 11:36:07,053 INFO o.a.j.JMeter: Loading system properties from: system.properties
+2023-02-08 11:36:07,053 INFO o.a.j.JMeter: Loading additional properties from: C:\Users\Vadzim_Tuhuzbayeu\OneDrive - EPAM\Projects\ANML\git\animeal\scripts\.properties
+2023-02-08 11:36:07,068 INFO o.a.j.JMeter: Copyright (c) 1998-2022 The Apache Software Foundation
+2023-02-08 11:36:07,068 INFO o.a.j.JMeter: Version 5.5
+2023-02-08 11:36:07,068 INFO o.a.j.JMeter: java.version=1.8.0_361
+2023-02-08 11:36:07,068 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) Client VM
+2023-02-08 11:36:07,068 INFO o.a.j.JMeter: os.name=Windows 10
+2023-02-08 11:36:07,068 INFO o.a.j.JMeter: os.arch=x86
+2023-02-08 11:36:07,068 INFO o.a.j.JMeter: os.version=10.0
+2023-02-08 11:36:07,068 INFO o.a.j.JMeter: file.encoding=Cp1252
+2023-02-08 11:36:07,068 INFO o.a.j.JMeter: java.awt.headless=true
+2023-02-08 11:36:07,068 INFO o.a.j.JMeter: Max memory     =259522560
+2023-02-08 11:36:07,068 INFO o.a.j.JMeter: Available Processors =8
+2023-02-08 11:36:07,068 INFO o.a.j.JMeter: Default Locale=English (United States)
+2023-02-08 11:36:07,068 INFO o.a.j.JMeter: JMeter  Locale=English (United States)
+2023-02-08 11:36:07,068 INFO o.a.j.JMeter: JMeterHome=C:\Users\Vadzim_Tuhuzbayeu\OneDrive - EPAM\Projects\ANML\git\animeal\jmeter
+2023-02-08 11:36:07,068 INFO o.a.j.JMeter: user.dir  =C:\Users\Vadzim_Tuhuzbayeu\OneDrive - EPAM\Projects\ANML\git\animeal\jmeter\bin
+2023-02-08 11:36:07,068 INFO o.a.j.JMeter: PWD       =C:\Users\Vadzim_Tuhuzbayeu\OneDrive - EPAM\Projects\ANML\git\animeal\jmeter\bin
+2023-02-08 11:36:07,100 INFO o.a.j.JMeter: IP: 192.168.0.228 Name: EPBYMINW0009 FullName: 192.168.0.228
+2023-02-08 11:36:07,106 INFO o.a.j.JMeter: Setting property 'jmeter.reportgenerator.outputdir' to:'C:\Users\Vadzim_Tuhuzbayeu\OneDrive - EPAM\Projects\ANML\git\animeal\results\longivity'
+2023-02-08 11:36:07,106 INFO o.a.j.r.d.ReportGenerator: ReportGenerator will use for Parsing the separator: ','
+2023-02-08 11:36:07,106 INFO o.a.j.r.d.ReportGenerator: Will only generate report from results file: C:\Users\Vadzim_Tuhuzbayeu\OneDrive - EPAM\Projects\ANML\git\animeal\results\longivity__20230201_1556.csv
+2023-02-08 11:36:07,106 INFO o.a.j.r.d.ReportGenerator: Reading report generator properties from: C:\Users\Vadzim_Tuhuzbayeu\OneDrive - EPAM\Projects\ANML\git\animeal\jmeter\bin\reportgenerator.properties
+2023-02-08 11:36:07,106 INFO o.a.j.r.d.ReportGenerator: Merging with JMeter properties
+2023-02-08 11:36:07,122 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.temp_dir' not found, using default value 'temp' instead.
+2023-02-08 11:36:07,122 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.apdex_per_transaction' not found, using default value 'null' instead.
+2023-02-08 11:36:07,122 INFO o.a.j.r.c.ReportGeneratorConfiguration: apdex_per_transaction is empty, not APDEX per transaction customization
+2023-02-08 11:36:07,122 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.sample_filter' not found, using default value 'null' instead.
+2023-02-08 11:36:07,122 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.report_title' not found, using default value 'null' instead.
+2023-02-08 11:36:07,122 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.start_date' not found, using default value 'null' instead.
+2023-02-08 11:36:07,122 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.end_date' not found, using default value 'null' instead.
+2023-02-08 11:36:07,122 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.date_format' not found, using default value 'null' instead.
+2023-02-08 11:36:07,122 INFO o.a.j.r.c.ReportGeneratorConfiguration: Will use date range start date: null, end date: null
+2023-02-08 11:36:07,122 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.totalTPS.exclude_controllers' not found, using default value 'false' instead.
+2023-02-08 11:36:07,122 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.activeThreadsOverTime.exclude_controllers' not found, using default value 'false' instead.
+2023-02-08 11:36:07,122 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.timeVsThreads.exclude_controllers' not found, using default value 'false' instead.
+2023-02-08 11:36:07,122 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimeDistribution.exclude_controllers' not found, using default value 'false' instead.
+2023-02-08 11:36:07,122 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.transactionsPerSecond.exclude_controllers' not found, using default value 'false' instead.
+2023-02-08 11:36:07,122 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentiles.exclude_controllers' not found, using default value 'false' instead.
+2023-02-08 11:36:07,122 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentilesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2023-02-08 11:36:07,122 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2023-02-08 11:36:07,122 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.connectTimeOverTime.exclude_controllers' not found, using default value 'false' instead.
+2023-02-08 11:36:07,122 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.latenciesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2023-02-08 11:36:07,122 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.filters_only_sample_series' not found, using default value 'true' instead.
+2023-02-08 11:36:07,122 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.series_filter' not found, using default value '' instead.
+2023-02-08 11:36:07,122 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.show_controllers_only' not found, using default value 'false' instead.
+2023-02-08 11:36:07,122 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.filters_only_sample_series' not found, using default value 'true' instead.
+2023-02-08 11:36:07,122 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.series_filter' not found, using default value '' instead.
+2023-02-08 11:36:07,122 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.show_controllers_only' not found, using default value 'false' instead.
+2023-02-08 11:36:07,222 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2023-02-08 11:36:07,222 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2023-02-08 11:36:07,238 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2023-02-08 11:36:07,269 INFO o.a.j.r.p.NormalizerSampleConsumer: Using format, 'ms', to parse timeStamp field
+2023-02-08 11:36:07,454 ERROR o.a.j.r.p.g.AbstractVersusRequestsGraphConsumer$TimeCountConsumer: Cannot create working directory "temp\responseTimeVsRequest"
+2023-02-08 11:36:07,454 ERROR o.a.j.JMeter: An error occurred: 
+org.apache.jmeter.report.dashboard.GenerationException: Error while processing samples: Consumer failed with message :Consumer failed with message :Consumer failed with message :Consumer failed with message :Consumer failed with message :Cannot create working directory "temp\responseTimeVsRequest"
+	at org.apache.jmeter.report.dashboard.ReportGenerator.generate(ReportGenerator.java:245) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.JMeter.start(JMeter.java:462) ~[ApacheJMeter_core.jar:5.5]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_361]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_361]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_361]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:1.8.0_361]
+	at org.apache.jmeter.NewDriver.main(NewDriver.java:259) ~[ApacheJMeter.jar:5.5]
+Caused by: org.apache.jmeter.report.core.SampleException: Consumer failed with message :Consumer failed with message :Consumer failed with message :Consumer failed with message :Consumer failed with message :Cannot create working directory "temp\responseTimeVsRequest"
+	at org.apache.jmeter.report.processor.CsvFileSampleSource$PrivateProducer.startProducing(CsvFileSampleSource.java:314) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.CsvFileSampleSource.produce(CsvFileSampleSource.java:174) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.CsvFileSampleSource.run(CsvFileSampleSource.java:235) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.dashboard.ReportGenerator.generate(ReportGenerator.java:243) ~[ApacheJMeter_core.jar:5.5]
+	... 6 more
+Caused by: org.apache.jmeter.report.core.SampleException: Consumer failed with message :Consumer failed with message :Consumer failed with message :Consumer failed with message :Cannot create working directory "temp\responseTimeVsRequest"
+	at org.apache.jmeter.report.processor.AbstractSampleConsumer.startProducing(AbstractSampleConsumer.java:219) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.NormalizerSampleConsumer.startConsuming(NormalizerSampleConsumer.java:69) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.CsvFileSampleSource$PrivateProducer.startProducing(CsvFileSampleSource.java:311) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.CsvFileSampleSource.produce(CsvFileSampleSource.java:174) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.CsvFileSampleSource.run(CsvFileSampleSource.java:235) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.dashboard.ReportGenerator.generate(ReportGenerator.java:243) ~[ApacheJMeter_core.jar:5.5]
+	... 6 more
+Caused by: org.apache.jmeter.report.core.SampleException: Consumer failed with message :Consumer failed with message :Consumer failed with message :Cannot create working directory "temp\responseTimeVsRequest"
+	at org.apache.jmeter.report.processor.AbstractSampleConsumer.startProducing(AbstractSampleConsumer.java:219) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.FilterConsumer.startConsuming(FilterConsumer.java:90) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.AbstractSampleConsumer.startProducing(AbstractSampleConsumer.java:216) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.NormalizerSampleConsumer.startConsuming(NormalizerSampleConsumer.java:69) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.CsvFileSampleSource$PrivateProducer.startProducing(CsvFileSampleSource.java:311) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.CsvFileSampleSource.produce(CsvFileSampleSource.java:174) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.CsvFileSampleSource.run(CsvFileSampleSource.java:235) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.dashboard.ReportGenerator.generate(ReportGenerator.java:243) ~[ApacheJMeter_core.jar:5.5]
+	... 6 more
+Caused by: org.apache.jmeter.report.core.SampleException: Consumer failed with message :Consumer failed with message :Cannot create working directory "temp\responseTimeVsRequest"
+	at org.apache.jmeter.report.processor.AbstractSampleConsumer.startProducing(AbstractSampleConsumer.java:219) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.FilterConsumer.startConsuming(FilterConsumer.java:90) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.AbstractSampleConsumer.startProducing(AbstractSampleConsumer.java:216) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.FilterConsumer.startConsuming(FilterConsumer.java:90) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.AbstractSampleConsumer.startProducing(AbstractSampleConsumer.java:216) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.NormalizerSampleConsumer.startConsuming(NormalizerSampleConsumer.java:69) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.CsvFileSampleSource$PrivateProducer.startProducing(CsvFileSampleSource.java:311) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.CsvFileSampleSource.produce(CsvFileSampleSource.java:174) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.CsvFileSampleSource.run(CsvFileSampleSource.java:235) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.dashboard.ReportGenerator.generate(ReportGenerator.java:243) ~[ApacheJMeter_core.jar:5.5]
+	... 6 more
+Caused by: org.apache.jmeter.report.core.SampleException: Consumer failed with message :Cannot create working directory "temp\responseTimeVsRequest"
+	at org.apache.jmeter.report.processor.AbstractSampleConsumer.startProducing(AbstractSampleConsumer.java:219) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.FilterConsumer.startConsuming(FilterConsumer.java:90) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.AbstractSampleConsumer.startProducing(AbstractSampleConsumer.java:216) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.FilterConsumer.startConsuming(FilterConsumer.java:90) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.AbstractSampleConsumer.startProducing(AbstractSampleConsumer.java:216) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.FilterConsumer.startConsuming(FilterConsumer.java:90) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.AbstractSampleConsumer.startProducing(AbstractSampleConsumer.java:216) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.NormalizerSampleConsumer.startConsuming(NormalizerSampleConsumer.java:69) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.CsvFileSampleSource$PrivateProducer.startProducing(CsvFileSampleSource.java:311) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.CsvFileSampleSource.produce(CsvFileSampleSource.java:174) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.CsvFileSampleSource.run(CsvFileSampleSource.java:235) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.dashboard.ReportGenerator.generate(ReportGenerator.java:243) ~[ApacheJMeter_core.jar:5.5]
+	... 6 more
+Caused by: org.apache.jmeter.report.core.SampleException: Cannot create working directory "temp\responseTimeVsRequest"
+	at org.apache.jmeter.report.processor.graph.AbstractVersusRequestsGraphConsumer$TimeCountConsumer.startConsuming(AbstractVersusRequestsGraphConsumer.java:278) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.graph.AbstractVersusRequestsGraphConsumer.startConsuming(AbstractVersusRequestsGraphConsumer.java:94) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.AbstractSampleConsumer.startProducing(AbstractSampleConsumer.java:216) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.FilterConsumer.startConsuming(FilterConsumer.java:90) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.AbstractSampleConsumer.startProducing(AbstractSampleConsumer.java:216) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.FilterConsumer.startConsuming(FilterConsumer.java:90) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.AbstractSampleConsumer.startProducing(AbstractSampleConsumer.java:216) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.FilterConsumer.startConsuming(FilterConsumer.java:90) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.AbstractSampleConsumer.startProducing(AbstractSampleConsumer.java:216) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.NormalizerSampleConsumer.startConsuming(NormalizerSampleConsumer.java:69) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.CsvFileSampleSource$PrivateProducer.startProducing(CsvFileSampleSource.java:311) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.CsvFileSampleSource.produce(CsvFileSampleSource.java:174) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.processor.CsvFileSampleSource.run(CsvFileSampleSource.java:235) ~[ApacheJMeter_core.jar:5.5]
+	at org.apache.jmeter.report.dashboard.ReportGenerator.generate(ReportGenerator.java:243) ~[ApacheJMeter_core.jar:5.5]
+	... 6 more

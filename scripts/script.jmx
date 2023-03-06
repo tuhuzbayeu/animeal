@@ -1,0 +1,2713 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.5">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="testName" elementType="Argument">
+            <stringProp name="Argument.name">testName</stringProp>
+            <stringProp name="Argument.value">${__P(testName)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="rampup" elementType="Argument">
+            <stringProp name="Argument.name">rampup</stringProp>
+            <stringProp name="Argument.value">${__P(rampup)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="hold" elementType="Argument">
+            <stringProp name="Argument.name">hold</stringProp>
+            <stringProp name="Argument.value">${__P(hold)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="admin" elementType="Argument">
+            <stringProp name="Argument.name">admin</stringProp>
+            <stringProp name="Argument.value">${__P(admin)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="volunteer" elementType="Argument">
+            <stringProp name="Argument.name">volunteer</stringProp>
+            <stringProp name="Argument.value">${__P(volunteer)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="host" elementType="Argument">
+            <stringProp name="Argument.name">host</stringProp>
+            <stringProp name="Argument.value">${__P(host)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="hostUsers" elementType="Argument">
+            <stringProp name="Argument.name">hostUsers</stringProp>
+            <stringProp name="Argument.value">${__P(hostUsers)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="hostGeo" elementType="Argument">
+            <stringProp name="Argument.name">hostGeo</stringProp>
+            <stringProp name="Argument.value">${__P(hostGeo)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="apiKey" elementType="Argument">
+            <stringProp name="Argument.name">apiKey</stringProp>
+            <stringProp name="Argument.value">${__P(apiKey)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="dataLimit" elementType="Argument">
+            <stringProp name="Argument.name">dataLimit</stringProp>
+            <stringProp name="Argument.value">${__P(dataLimit)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="sleep" elementType="Argument">
+            <stringProp name="Argument.name">sleep</stringProp>
+            <stringProp name="Argument.value">${__P(sleep)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="separator" elementType="Argument">
+            <stringProp name="Argument.name">separator</stringProp>
+            <stringProp name="Argument.value">${__groovy(File.separator)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <com.tag.jmeter.ext.config.PropertyReader guiclass="TestBeanGUI" testclass="com.tag.jmeter.ext.config.PropertyReader" testname="Properties" enabled="true">
+        <stringProp name="propFilePath">.properties</stringProp>
+      </com.tag.jmeter.ext.config.PropertyReader>
+      <hashTree/>
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header" enabled="true">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="Authorization" elementType="Header">
+            <stringProp name="Header.name">x-api-key</stringProp>
+            <stringProp name="Header.value">${apiKey}</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager>
+      <hashTree/>
+      <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Write Result to csv" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>false</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename">..${separator}..${separator}results${separator}${testName}__${__groovy(new Date().format(&apos;yyyyMMdd_HHmm&apos;))}.csv</stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Test Fragments" enabled="false"/>
+      <hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Read" enabled="true"/>
+        <hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Get List Languages" enabled="true"/>
+          <hashTree>
+            <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While nextToken != null" enabled="true">
+              <stringProp name="WhileController.condition">${__groovy(vars.get(&quot;nextToken&quot;) != &quot;null&quot;)}</stringProp>
+            </WhileController>
+            <hashTree>
+              <HTTPSamplerProxy guiclass="GraphQLHTTPSamplerGui" testclass="HTTPSamplerProxy" testname="listLanguages" enabled="true">
+                <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                  <collectionProp name="Arguments.arguments">
+                    <elementProp name="" elementType="HTTPArgument" enabled="true">
+                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                      <stringProp name="Argument.value">{&quot;operationName&quot;:null,&quot;variables&quot;:{
+	&quot;limit&quot;: ${__groovy(vars.get(&quot;dataLimit&quot;))},
+	&quot;nextToken&quot;: ${__groovy(
+		if (vars.get(&quot;nextToken&quot;).toString() != &quot;null&quot;) return &apos;&quot;&apos; + vars.get(&quot;nextToken&quot;) + &apos;&quot;&apos;
+		else return &quot;null&quot;
+	)}
+},&quot;query&quot;:&quot;query ListLanguages($filter: ModelLanguageFilterInput, $limit: Int, $nextToken: String) {\n  listLanguages(filter: $filter, limit: $limit, nextToken: $nextToken) {\n    items {\n      id\n      name\n      code\n      createdAt\n      updatedAt\n      createdBy\n      updatedBy\n      direction\n      owner\n    }\n    nextToken\n  }\n}&quot;}</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                      <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+                <stringProp name="HTTPSampler.domain">${host}</stringProp>
+                <stringProp name="HTTPSampler.port"></stringProp>
+                <stringProp name="HTTPSampler.protocol">https</stringProp>
+                <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                <stringProp name="HTTPSampler.path">/graphql</stringProp>
+                <stringProp name="HTTPSampler.method">POST</stringProp>
+                <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                <stringProp name="GraphQLHTTPSampler.operationName"></stringProp>
+                <stringProp name="GraphQLHTTPSampler.query">query ListLanguages($filter: ModelLanguageFilterInput, $limit: Int, $nextToken: String) {
+  listLanguages(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      code
+      createdAt
+      updatedAt
+      createdBy
+      updatedBy
+      direction
+      owner
+    }
+    nextToken
+  }
+}
+</stringProp>
+                <stringProp name="GraphQLHTTPSampler.variables">{
+	&quot;limit&quot;: ${__groovy(vars.get(&quot;dataLimit&quot;))},
+	&quot;nextToken&quot;: ${__groovy(
+		if (vars.get(&quot;nextToken&quot;).toString() != &quot;null&quot;) return &apos;&quot;&apos; + vars.get(&quot;nextToken&quot;) + &apos;&quot;&apos;
+		else return &quot;null&quot;
+	)}
+}
+</stringProp>
+                <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              </HTTPSamplerProxy>
+              <hashTree>
+                <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Get nextToken" enabled="true">
+                  <stringProp name="JSONPostProcessor.referenceNames">nextToken</stringProp>
+                  <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.${__samplerName()}.nextToken</stringProp>
+                  <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+                  <stringProp name="JSONPostProcessor.defaultValues">null</stringProp>
+                </JSONPostProcessor>
+                <hashTree/>
+                <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Check errors" enabled="true">
+                  <collectionProp name="Asserion.test_strings">
+                    <stringProp name="329552226">errorType</stringProp>
+                  </collectionProp>
+                  <stringProp name="Assertion.custom_message"></stringProp>
+                  <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                  <boolProp name="Assertion.assume_success">false</boolProp>
+                  <intProp name="Assertion.test_type">6</intProp>
+                  <stringProp name="Assertion.scope">all</stringProp>
+                </ResponseAssertion>
+                <hashTree/>
+              </hashTree>
+            </hashTree>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Remove nextToken" enabled="true">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="977251861">Test Fragments</stringProp>
+                <stringProp name="-1824489883">Helpers</stringProp>
+                <stringProp name="1707321930">Remove nextToken</stringProp>
+              </collectionProp>
+            </ModuleController>
+            <hashTree/>
+          </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Get List Languages Settings" enabled="true"/>
+          <hashTree>
+            <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While nextToken != null" enabled="true">
+              <stringProp name="WhileController.condition">${__groovy(vars.get(&quot;nextToken&quot;) != &quot;null&quot;)}</stringProp>
+            </WhileController>
+            <hashTree>
+              <HTTPSamplerProxy guiclass="GraphQLHTTPSamplerGui" testclass="HTTPSamplerProxy" testname="listLanguagesSettings" enabled="true">
+                <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                  <collectionProp name="Arguments.arguments">
+                    <elementProp name="" elementType="HTTPArgument" enabled="true">
+                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                      <stringProp name="Argument.value">{&quot;operationName&quot;:null,&quot;variables&quot;:{
+	&quot;limit&quot;: ${__groovy(vars.get(&quot;dataLimit&quot;))},
+	&quot;nextToken&quot;: ${__groovy(
+		if (vars.get(&quot;nextToken&quot;).toString() != &quot;null&quot;) return &apos;&quot;&apos; + vars.get(&quot;nextToken&quot;) + &apos;&quot;&apos;
+		else return &quot;null&quot;
+	)}
+},&quot;query&quot;:&quot;query ListLanguagesSettings($filter: ModelLanguagesSettingFilterInput, $limit: Int, $nextToken: String) {\n  listLanguagesSettings(filter: $filter, limit: $limit, nextToken: $nextToken) {\n    items {\n      id\n      name\n      value\n      createdAt\n      updatedAt\n      createdBy\n      updatedBy\n      owner\n    }\n    nextToken\n  }\n}&quot;}</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                      <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+                <stringProp name="HTTPSampler.domain">${host}</stringProp>
+                <stringProp name="HTTPSampler.port"></stringProp>
+                <stringProp name="HTTPSampler.protocol">https</stringProp>
+                <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                <stringProp name="HTTPSampler.path">/graphql</stringProp>
+                <stringProp name="HTTPSampler.method">POST</stringProp>
+                <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                <stringProp name="GraphQLHTTPSampler.operationName"></stringProp>
+                <stringProp name="GraphQLHTTPSampler.query">query ListLanguagesSettings($filter: ModelLanguagesSettingFilterInput, $limit: Int, $nextToken: String) {
+  listLanguagesSettings(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      value
+      createdAt
+      updatedAt
+      createdBy
+      updatedBy
+      owner
+    }
+    nextToken
+  }
+}</stringProp>
+                <stringProp name="GraphQLHTTPSampler.variables">{
+	&quot;limit&quot;: ${__groovy(vars.get(&quot;dataLimit&quot;))},
+	&quot;nextToken&quot;: ${__groovy(
+		if (vars.get(&quot;nextToken&quot;).toString() != &quot;null&quot;) return &apos;&quot;&apos; + vars.get(&quot;nextToken&quot;) + &apos;&quot;&apos;
+		else return &quot;null&quot;
+	)}
+}
+</stringProp>
+                <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              </HTTPSamplerProxy>
+              <hashTree>
+                <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Get nextToken" enabled="true">
+                  <stringProp name="JSONPostProcessor.referenceNames">nextToken</stringProp>
+                  <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.${__samplerName()}.nextToken</stringProp>
+                  <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+                  <stringProp name="JSONPostProcessor.defaultValues">null</stringProp>
+                </JSONPostProcessor>
+                <hashTree/>
+                <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Check errors" enabled="true">
+                  <collectionProp name="Asserion.test_strings">
+                    <stringProp name="329552226">errorType</stringProp>
+                  </collectionProp>
+                  <stringProp name="Assertion.custom_message"></stringProp>
+                  <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                  <boolProp name="Assertion.assume_success">false</boolProp>
+                  <intProp name="Assertion.test_type">6</intProp>
+                  <stringProp name="Assertion.scope">all</stringProp>
+                </ResponseAssertion>
+                <hashTree/>
+              </hashTree>
+            </hashTree>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Remove nextToken" enabled="true">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="977251861">Test Fragments</stringProp>
+                <stringProp name="-1824489883">Helpers</stringProp>
+                <stringProp name="1707321930">Remove nextToken</stringProp>
+              </collectionProp>
+            </ModuleController>
+            <hashTree/>
+          </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Get Feeding Points" enabled="true"/>
+          <hashTree>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="pointID" elementType="Argument">
+                  <stringProp name="Argument.name">pointID</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+            <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While nextToken != null" enabled="true">
+              <stringProp name="WhileController.condition">${__groovy(vars.get(&quot;nextToken&quot;) != &quot;null&quot;)}</stringProp>
+            </WhileController>
+            <hashTree>
+              <HTTPSamplerProxy guiclass="GraphQLHTTPSamplerGui" testclass="HTTPSamplerProxy" testname="searchFeedingPoints" enabled="true">
+                <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                  <collectionProp name="Arguments.arguments">
+                    <elementProp name="" elementType="HTTPArgument" enabled="true">
+                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                      <stringProp name="Argument.value">{&quot;operationName&quot;:null,&quot;variables&quot;:{
+	&quot;limit&quot;: ${dataLimit},
+	&quot;nextToken&quot;: ${__groovy(
+		if (vars.get(&quot;nextToken&quot;).toString() != &quot;null&quot;) return &apos;&quot;&apos; + vars.get(&quot;nextToken&quot;) + &apos;&quot;&apos;
+		else return &quot;null&quot;
+	)},
+	&quot;sort&quot;: {
+		&quot;direction&quot;: &quot;${direction}&quot;,
+		&quot;field&quot;: &quot;${field}&quot;
+	}
+},&quot;query&quot;:&quot;query SearchFeedingPoints($filter: SearchableFeedingPointFilterInput, $sort: [SearchableFeedingPointSortInput], $limit: Int, $nextToken: String, $from: Int, $aggregates: [SearchableFeedingPointAggregationInput]) {\n  searchFeedingPoints(\n    filter: $filter\n    sort: $sort\n    limit: $limit\n    nextToken: $nextToken\n    from: $from\n    aggregates: $aggregates\n  ) {\n    items {\n      id\n      name\n      description\n      city\n      street\n      address\n      images\n      point {\n        type\n        coordinates\n      }\n      location {\n        lat\n        lon\n      }\n      region\n      neighborhood\n      distance\n      status\n      i18n {\n        locale\n        name\n        description\n        city\n        street\n        address\n        region\n        neighborhood\n      }\n      statusUpdatedAt\n      createdAt\n      updatedAt\n      createdBy\n      updatedBy\n      owner\n      pets {\n        items {\n          id\n          petId\n          feedingPointId\n          createdAt\n          updatedAt\n          owner\n        }\n        nextToken\n      }\n      category {\n        id\n        name\n        icon\n        tag\n        i18n {\n          locale\n          name\n        }\n        createdAt\n        updatedAt\n        createdBy\n        updatedBy\n        owner\n      }\n      users {\n        items {\n          id\n          userId\n          feedingPointId\n          createdAt\n          updatedAt\n          owner\n        }\n        nextToken\n      }\n      feedings {\n        items {\n          id\n          userId\n          images\n          status\n          createdAt\n          updatedAt\n          createdBy\n          updatedBy\n          owner\n          feedingPointFeedingsId\n        }\n        nextToken\n      }\n      cover\n      feedingPointCategoryId\n    }\n    nextToken\n    total\n    aggregateItems {\n      name\n      result {\n        ... on SearchableAggregateScalarResult {\n          value\n        }\n        ... on SearchableAggregateBucketResult {\n          buckets {\n            key\n            doc_count\n          }\n        }\n      }\n    }\n  }\n}&quot;}</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                      <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+                <stringProp name="HTTPSampler.domain">${host}</stringProp>
+                <stringProp name="HTTPSampler.port"></stringProp>
+                <stringProp name="HTTPSampler.protocol">https</stringProp>
+                <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                <stringProp name="HTTPSampler.path">/graphql</stringProp>
+                <stringProp name="HTTPSampler.method">POST</stringProp>
+                <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                <stringProp name="GraphQLHTTPSampler.operationName"></stringProp>
+                <stringProp name="GraphQLHTTPSampler.query">query SearchFeedingPoints($filter: SearchableFeedingPointFilterInput, $sort: [SearchableFeedingPointSortInput], $limit: Int, $nextToken: String, $from: Int, $aggregates: [SearchableFeedingPointAggregationInput]) {
+  searchFeedingPoints(
+    filter: $filter
+    sort: $sort
+    limit: $limit
+    nextToken: $nextToken
+    from: $from
+    aggregates: $aggregates
+  ) {
+    items {
+      id
+      name
+      description
+      city
+      street
+      address
+      images
+      point {
+        type
+        coordinates
+      }
+      location {
+        lat
+        lon
+      }
+      region
+      neighborhood
+      distance
+      status
+      i18n {
+        locale
+        name
+        description
+        city
+        street
+        address
+        region
+        neighborhood
+      }
+      statusUpdatedAt
+      createdAt
+      updatedAt
+      createdBy
+      updatedBy
+      owner
+      pets {
+        items {
+          id
+          petId
+          feedingPointId
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+      }
+      category {
+        id
+        name
+        icon
+        tag
+        i18n {
+          locale
+          name
+        }
+        createdAt
+        updatedAt
+        createdBy
+        updatedBy
+        owner
+      }
+      users {
+        items {
+          id
+          userId
+          feedingPointId
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+      }
+      feedings {
+        items {
+          id
+          userId
+          images
+          status
+          createdAt
+          updatedAt
+          createdBy
+          updatedBy
+          owner
+          feedingPointFeedingsId
+        }
+        nextToken
+      }
+      cover
+      feedingPointCategoryId
+    }
+    nextToken
+    total
+    aggregateItems {
+      name
+      result {
+        ... on SearchableAggregateScalarResult {
+          value
+        }
+        ... on SearchableAggregateBucketResult {
+          buckets {
+            key
+            doc_count
+          }
+        }
+      }
+    }
+  }
+}
+</stringProp>
+                <stringProp name="GraphQLHTTPSampler.variables">{
+	&quot;limit&quot;: ${dataLimit},
+	&quot;nextToken&quot;: ${__groovy(
+		if (vars.get(&quot;nextToken&quot;).toString() != &quot;null&quot;) return &apos;&quot;&apos; + vars.get(&quot;nextToken&quot;) + &apos;&quot;&apos;
+		else return &quot;null&quot;
+	)},
+	&quot;sort&quot;: {
+		&quot;direction&quot;: &quot;${direction}&quot;,
+		&quot;field&quot;: &quot;${field}&quot;
+	}
+}
+</stringProp>
+                <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              </HTTPSamplerProxy>
+              <hashTree>
+                <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="Random Sort" enabled="true">
+                  <stringProp name="scriptLanguage">groovy</stringProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="cacheKey">true</stringProp>
+                  <stringProp name="script">def direction = [&quot;asc&quot;, &quot;desc&quot;]
+def field = [&quot;name&quot;, &quot;createdAt&quot;, &quot;updatedAt&quot;]
+Random rnd = new Random()
+ 
+vars.put(&quot;direction&quot;, direction[rnd.nextInt(direction.size)])
+vars.put(&quot;field&quot;, field[rnd.nextInt(direction.size)])
+</stringProp>
+                </JSR223PreProcessor>
+                <hashTree/>
+                <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Get nextToken" enabled="true">
+                  <stringProp name="JSONPostProcessor.referenceNames">nextToken</stringProp>
+                  <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.${__samplerName()}.nextToken</stringProp>
+                  <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+                  <stringProp name="JSONPostProcessor.defaultValues">null</stringProp>
+                </JSONPostProcessor>
+                <hashTree/>
+                <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Get ID" enabled="true">
+                  <stringProp name="JSONPostProcessor.referenceNames">id</stringProp>
+                  <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.${__samplerName()}..[?(@.address==&quot;Test&quot;)].id</stringProp>
+                  <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+                  <stringProp name="JSONPostProcessor.defaultValues">null</stringProp>
+                </JSONPostProcessor>
+                <hashTree/>
+                <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Ignore if null" enabled="true">
+                  <stringProp name="scriptLanguage">groovy</stringProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="cacheKey">false</stringProp>
+                  <stringProp name="script">if (vars.get(&quot;nextToken&quot;) == &quot;null&quot;) prev.setIgnore();</stringProp>
+                </JSR223PostProcessor>
+                <hashTree/>
+                <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Check errors" enabled="true">
+                  <collectionProp name="Asserion.test_strings">
+                    <stringProp name="329552226">errorType</stringProp>
+                  </collectionProp>
+                  <stringProp name="Assertion.custom_message"></stringProp>
+                  <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                  <boolProp name="Assertion.assume_success">false</boolProp>
+                  <intProp name="Assertion.test_type">6</intProp>
+                  <stringProp name="Assertion.scope">all</stringProp>
+                </ResponseAssertion>
+                <hashTree/>
+              </hashTree>
+              <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Save ID" enabled="true">
+                <stringProp name="scriptLanguage">groovy</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="script">if (vars.get(&quot;id&quot;) != &quot;null&quot;) vars.put(&quot;pointID&quot;, vars.get(&quot;id&quot;));</stringProp>
+              </JSR223Sampler>
+              <hashTree>
+                <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Ignore Sampler" enabled="true">
+                  <stringProp name="scriptLanguage">groovy</stringProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="cacheKey">true</stringProp>
+                  <stringProp name="script">prev.setIgnore();</stringProp>
+                </JSR223PostProcessor>
+                <hashTree/>
+              </hashTree>
+            </hashTree>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Remove nextToken" enabled="true">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="977251861">Test Fragments</stringProp>
+                <stringProp name="-1824489883">Helpers</stringProp>
+                <stringProp name="1707321930">Remove nextToken</stringProp>
+              </collectionProp>
+            </ModuleController>
+            <hashTree/>
+          </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Get Feeding Point" enabled="true"/>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="GraphQLHTTPSamplerGui" testclass="HTTPSamplerProxy" testname="getFeedingPoint" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument" enabled="true">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;operationName&quot;:null,&quot;variables&quot;:{
+	&quot;id&quot;: &quot;${__groovy(vars.get(&quot;pointID&quot;))}&quot;
+},&quot;query&quot;:&quot;query GetFeedingPoint($id: ID!) {\n  getFeedingPoint(id: $id) {\n    id\n    name\n    description\n    city\n    street\n    address\n    images\n    point {\n      type\n      coordinates\n    }\n    location {\n      lat\n      lon\n    }\n    region\n    neighborhood\n    distance\n    status\n    i18n {\n      locale\n      name\n      description\n      city\n      street\n      address\n      region\n      neighborhood\n    }\n    statusUpdatedAt\n    createdAt\n    updatedAt\n    createdBy\n    updatedBy\n    owner\n    pets {\n      items {\n        id\n        petId\n        feedingPointId\n        pet {\n          id\n          name\n          images\n          breed\n          color\n          chipNumber\n          vaccinatedAt\n          yearOfBirth\n          createdAt\n          updatedAt\n          createdBy\n          updatedBy\n          owner\n          cover\n          petCategoryId\n        }\n        feedingPoint {\n          id\n          name\n          description\n          city\n          street\n          address\n          images\n          region\n          neighborhood\n          distance\n          status\n          statusUpdatedAt\n          createdAt\n          updatedAt\n          createdBy\n          updatedBy\n          owner\n          cover\n          feedingPointCategoryId\n        }\n        createdAt\n        updatedAt\n        owner\n      }\n      nextToken\n    }\n    category {\n      id\n      name\n      icon\n      tag\n      i18n {\n        locale\n        name\n      }\n      createdAt\n      updatedAt\n      createdBy\n      updatedBy\n      owner\n    }\n    users {\n      items {\n        id\n        userId\n        feedingPointId\n        feedingPoint {\n          id\n          name\n          description\n          city\n          street\n          address\n          images\n          region\n          neighborhood\n          distance\n          status\n          statusUpdatedAt\n          createdAt\n          updatedAt\n          createdBy\n          updatedBy\n          owner\n          cover\n          feedingPointCategoryId\n        }\n        createdAt\n        updatedAt\n        owner\n      }\n      nextToken\n    }\n    feedings {\n      items {\n        id\n        userId\n        images\n        status\n        createdAt\n        updatedAt\n        createdBy\n        updatedBy\n        owner\n        feedingPoint {\n          id\n          name\n          description\n          city\n          street\n          address\n          images\n          region\n          neighborhood\n          distance\n          status\n          statusUpdatedAt\n          createdAt\n          updatedAt\n          createdBy\n          updatedBy\n          owner\n          cover\n          feedingPointCategoryId\n        }\n        feedingPointFeedingsId\n      }\n      nextToken\n    }\n    cover\n    feedingPointCategoryId\n  }\n}&quot;}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">${host}</stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/graphql</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="GraphQLHTTPSampler.operationName"></stringProp>
+              <stringProp name="GraphQLHTTPSampler.query">query GetFeedingPoint($id: ID!) {
+  getFeedingPoint(id: $id) {
+    id
+    name
+    description
+    city
+    street
+    address
+    images
+    point {
+      type
+      coordinates
+    }
+    location {
+      lat
+      lon
+    }
+    region
+    neighborhood
+    distance
+    status
+    i18n {
+      locale
+      name
+      description
+      city
+      street
+      address
+      region
+      neighborhood
+    }
+    statusUpdatedAt
+    createdAt
+    updatedAt
+    createdBy
+    updatedBy
+    owner
+    pets {
+      items {
+        id
+        petId
+        feedingPointId
+        pet {
+          id
+          name
+          images
+          breed
+          color
+          chipNumber
+          vaccinatedAt
+          yearOfBirth
+          createdAt
+          updatedAt
+          createdBy
+          updatedBy
+          owner
+          cover
+          petCategoryId
+        }
+        feedingPoint {
+          id
+          name
+          description
+          city
+          street
+          address
+          images
+          region
+          neighborhood
+          distance
+          status
+          statusUpdatedAt
+          createdAt
+          updatedAt
+          createdBy
+          updatedBy
+          owner
+          cover
+          feedingPointCategoryId
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    category {
+      id
+      name
+      icon
+      tag
+      i18n {
+        locale
+        name
+      }
+      createdAt
+      updatedAt
+      createdBy
+      updatedBy
+      owner
+    }
+    users {
+      items {
+        id
+        userId
+        feedingPointId
+        feedingPoint {
+          id
+          name
+          description
+          city
+          street
+          address
+          images
+          region
+          neighborhood
+          distance
+          status
+          statusUpdatedAt
+          createdAt
+          updatedAt
+          createdBy
+          updatedBy
+          owner
+          cover
+          feedingPointCategoryId
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    feedings {
+      items {
+        id
+        userId
+        images
+        status
+        createdAt
+        updatedAt
+        createdBy
+        updatedBy
+        owner
+        feedingPoint {
+          id
+          name
+          description
+          city
+          street
+          address
+          images
+          region
+          neighborhood
+          distance
+          status
+          statusUpdatedAt
+          createdAt
+          updatedAt
+          createdBy
+          updatedBy
+          owner
+          cover
+          feedingPointCategoryId
+        }
+        feedingPointFeedingsId
+      }
+      nextToken
+    }
+    cover
+    feedingPointCategoryId
+  }
+}
+</stringProp>
+              <stringProp name="GraphQLHTTPSampler.variables">{
+	&quot;id&quot;: &quot;${__groovy(vars.get(&quot;pointID&quot;))}&quot;
+}
+</stringProp>
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Get Body" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">lat; lon; name</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.${__samplerName()}.location.lat; $.data.${__samplerName()}.location.lon; $.data.${__samplerName()}.name</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+                <stringProp name="JSONPostProcessor.defaultValues">null; null; null</stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Check errors" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="329552226">errorType</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">6</intProp>
+                <stringProp name="Assertion.scope">all</stringProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Get Categories" enabled="true"/>
+          <hashTree>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="categoryID" elementType="Argument">
+                  <stringProp name="Argument.name">categoryID</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+            <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While nextToken != null" enabled="true">
+              <stringProp name="WhileController.condition">${__groovy(vars.get(&quot;nextToken&quot;) != &quot;null&quot;)}</stringProp>
+            </WhileController>
+            <hashTree>
+              <HTTPSamplerProxy guiclass="GraphQLHTTPSamplerGui" testclass="HTTPSamplerProxy" testname="searchCategories" enabled="true">
+                <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                  <collectionProp name="Arguments.arguments">
+                    <elementProp name="" elementType="HTTPArgument" enabled="true">
+                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                      <stringProp name="Argument.value">{&quot;operationName&quot;:null,&quot;variables&quot;:{
+	&quot;limit&quot;: ${__groovy(vars.get(&quot;dataLimit&quot;))},
+	&quot;nextToken&quot;: ${__groovy(
+		if (vars.get(&quot;nextToken&quot;).toString() != &quot;null&quot;) return &apos;&quot;&apos; + vars.get(&quot;nextToken&quot;) + &apos;&quot;&apos;
+		else return &quot;null&quot;
+	)}
+},&quot;query&quot;:&quot;query SearchCategories($filter: SearchableCategoryFilterInput, $sort: [SearchableCategorySortInput], $limit: Int, $nextToken: String, $from: Int, $aggregates: [SearchableCategoryAggregationInput]) {\n  searchCategories(\n    filter: $filter\n    sort: $sort\n    limit: $limit\n    nextToken: $nextToken\n    from: $from\n    aggregates: $aggregates\n  ) {\n    items {\n      id\n      name\n      icon\n      tag\n      i18n {\n        locale\n        name\n      }\n      createdAt\n      updatedAt\n      createdBy\n      updatedBy\n      owner\n    }\n    nextToken\n    total\n    aggregateItems {\n      name\n      result {\n        ... on SearchableAggregateScalarResult {\n          value\n        }\n        ... on SearchableAggregateBucketResult {\n          buckets {\n            key\n            doc_count\n          }\n        }\n      }\n    }\n  }\n}&quot;}</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                      <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+                <stringProp name="HTTPSampler.domain">${host}</stringProp>
+                <stringProp name="HTTPSampler.port"></stringProp>
+                <stringProp name="HTTPSampler.protocol">https</stringProp>
+                <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                <stringProp name="HTTPSampler.path">/graphql</stringProp>
+                <stringProp name="HTTPSampler.method">POST</stringProp>
+                <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                <stringProp name="GraphQLHTTPSampler.operationName"></stringProp>
+                <stringProp name="GraphQLHTTPSampler.query">query SearchCategories($filter: SearchableCategoryFilterInput, $sort: [SearchableCategorySortInput], $limit: Int, $nextToken: String, $from: Int, $aggregates: [SearchableCategoryAggregationInput]) {
+  searchCategories(
+    filter: $filter
+    sort: $sort
+    limit: $limit
+    nextToken: $nextToken
+    from: $from
+    aggregates: $aggregates
+  ) {
+    items {
+      id
+      name
+      icon
+      tag
+      i18n {
+        locale
+        name
+      }
+      createdAt
+      updatedAt
+      createdBy
+      updatedBy
+      owner
+    }
+    nextToken
+    total
+    aggregateItems {
+      name
+      result {
+        ... on SearchableAggregateScalarResult {
+          value
+        }
+        ... on SearchableAggregateBucketResult {
+          buckets {
+            key
+            doc_count
+          }
+        }
+      }
+    }
+  }
+}
+</stringProp>
+                <stringProp name="GraphQLHTTPSampler.variables">{
+	&quot;limit&quot;: ${__groovy(vars.get(&quot;dataLimit&quot;))},
+	&quot;nextToken&quot;: ${__groovy(
+		if (vars.get(&quot;nextToken&quot;).toString() != &quot;null&quot;) return &apos;&quot;&apos; + vars.get(&quot;nextToken&quot;) + &apos;&quot;&apos;
+		else return &quot;null&quot;
+	)}
+}
+</stringProp>
+                <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              </HTTPSamplerProxy>
+              <hashTree>
+                <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Get nextToken" enabled="true">
+                  <stringProp name="JSONPostProcessor.referenceNames">nextToken</stringProp>
+                  <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.${__samplerName()}.nextToken</stringProp>
+                  <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+                  <stringProp name="JSONPostProcessor.defaultValues">null</stringProp>
+                </JSONPostProcessor>
+                <hashTree/>
+                <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Get Category" enabled="true">
+                  <stringProp name="JSONPostProcessor.referenceNames">id</stringProp>
+                  <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.${__samplerName()}..[?(@.tag==&quot;dogs&quot;)].id</stringProp>
+                  <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+                  <stringProp name="JSONPostProcessor.defaultValues">null</stringProp>
+                </JSONPostProcessor>
+                <hashTree/>
+                <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Check errors" enabled="true">
+                  <collectionProp name="Asserion.test_strings">
+                    <stringProp name="329552226">errorType</stringProp>
+                  </collectionProp>
+                  <stringProp name="Assertion.custom_message"></stringProp>
+                  <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                  <boolProp name="Assertion.assume_success">false</boolProp>
+                  <intProp name="Assertion.test_type">6</intProp>
+                  <stringProp name="Assertion.scope">all</stringProp>
+                </ResponseAssertion>
+                <hashTree/>
+              </hashTree>
+              <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Save ID" enabled="true">
+                <stringProp name="scriptLanguage">groovy</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="script">if (vars.get(&quot;id&quot;) != &quot;null&quot;) vars.put(&quot;categoryID&quot;, vars.get(&quot;id&quot;));</stringProp>
+              </JSR223Sampler>
+              <hashTree>
+                <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Ignore Sampler" enabled="true">
+                  <stringProp name="scriptLanguage">groovy</stringProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="cacheKey">true</stringProp>
+                  <stringProp name="script">prev.setIgnore();</stringProp>
+                </JSR223PostProcessor>
+                <hashTree/>
+              </hashTree>
+            </hashTree>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Remove nextToken" enabled="true">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="977251861">Test Fragments</stringProp>
+                <stringProp name="-1824489883">Helpers</stringProp>
+                <stringProp name="1707321930">Remove nextToken</stringProp>
+              </collectionProp>
+            </ModuleController>
+            <hashTree/>
+          </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Get Pets" enabled="true"/>
+          <hashTree>
+            <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While nextToken != null" enabled="true">
+              <stringProp name="WhileController.condition">${__groovy(vars.get(&quot;nextToken&quot;) != &quot;null&quot;)}</stringProp>
+            </WhileController>
+            <hashTree>
+              <HTTPSamplerProxy guiclass="GraphQLHTTPSamplerGui" testclass="HTTPSamplerProxy" testname="searchPets" enabled="true">
+                <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                  <collectionProp name="Arguments.arguments">
+                    <elementProp name="" elementType="HTTPArgument" enabled="true">
+                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                      <stringProp name="Argument.value">{&quot;operationName&quot;:null,&quot;variables&quot;:{
+	&quot;limit&quot;: ${__groovy(vars.get(&quot;dataLimit&quot;))},
+	&quot;nextToken&quot;: ${__groovy(
+		if (vars.get(&quot;nextToken&quot;).toString() != &quot;null&quot;) return &apos;&quot;&apos; + vars.get(&quot;nextToken&quot;) + &apos;&quot;&apos;
+		else return &quot;null&quot;
+	)}
+},&quot;query&quot;:&quot;query SearchPets($filter: SearchablePetFilterInput, $sort: [SearchablePetSortInput], $limit: Int, $nextToken: String, $from: Int, $aggregates: [SearchablePetAggregationInput]) {\n  searchPets(\n    filter: $filter\n    sort: $sort\n    limit: $limit\n    nextToken: $nextToken\n    from: $from\n    aggregates: $aggregates\n  ) {\n    items {\n      id\n      name\n      images\n      breed\n      color\n      chipNumber\n      vaccinatedAt\n      yearOfBirth\n      caretaker {\n        fullName\n        email\n        phoneNumber\n      }\n      i18n {\n        locale\n        name\n        breed\n        color\n      }\n      createdAt\n      updatedAt\n      createdBy\n      updatedBy\n      owner\n      feedingPoints {\n        items {\n          id\n          petId\n          feedingPointId\n          createdAt\n          updatedAt\n          owner\n        }\n        nextToken\n      }\n      category {\n        id\n        name\n        icon\n        tag\n        i18n {\n          locale\n          name\n        }\n        createdAt\n        updatedAt\n        createdBy\n        updatedBy\n        owner\n      }\n      medications {\n        items {\n          id\n          name\n          petId\n          date\n          createdAt\n          updatedAt\n          owner\n        }\n        nextToken\n      }\n      users {\n        items {\n          id\n          userId\n          petId\n          createdAt\n          updatedAt\n          owner\n        }\n        nextToken\n      }\n      cover\n      petCategoryId\n    }\n    nextToken\n    total\n    aggregateItems {\n      name\n      result {\n        ... on SearchableAggregateScalarResult {\n          value\n        }\n        ... on SearchableAggregateBucketResult {\n          buckets {\n            key\n            doc_count\n          }\n        }\n      }\n    }\n  }\n}&quot;}</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                      <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+                <stringProp name="HTTPSampler.domain">${host}</stringProp>
+                <stringProp name="HTTPSampler.port"></stringProp>
+                <stringProp name="HTTPSampler.protocol">https</stringProp>
+                <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                <stringProp name="HTTPSampler.path">/graphql</stringProp>
+                <stringProp name="HTTPSampler.method">POST</stringProp>
+                <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                <stringProp name="GraphQLHTTPSampler.operationName"></stringProp>
+                <stringProp name="GraphQLHTTPSampler.query">query SearchPets($filter: SearchablePetFilterInput, $sort: [SearchablePetSortInput], $limit: Int, $nextToken: String, $from: Int, $aggregates: [SearchablePetAggregationInput]) {
+  searchPets(
+    filter: $filter
+    sort: $sort
+    limit: $limit
+    nextToken: $nextToken
+    from: $from
+    aggregates: $aggregates
+  ) {
+    items {
+      id
+      name
+      images
+      breed
+      color
+      chipNumber
+      vaccinatedAt
+      yearOfBirth
+      caretaker {
+        fullName
+        email
+        phoneNumber
+      }
+      i18n {
+        locale
+        name
+        breed
+        color
+      }
+      createdAt
+      updatedAt
+      createdBy
+      updatedBy
+      owner
+      feedingPoints {
+        items {
+          id
+          petId
+          feedingPointId
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+      }
+      category {
+        id
+        name
+        icon
+        tag
+        i18n {
+          locale
+          name
+        }
+        createdAt
+        updatedAt
+        createdBy
+        updatedBy
+        owner
+      }
+      medications {
+        items {
+          id
+          name
+          petId
+          date
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+      }
+      users {
+        items {
+          id
+          userId
+          petId
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+      }
+      cover
+      petCategoryId
+    }
+    nextToken
+    total
+    aggregateItems {
+      name
+      result {
+        ... on SearchableAggregateScalarResult {
+          value
+        }
+        ... on SearchableAggregateBucketResult {
+          buckets {
+            key
+            doc_count
+          }
+        }
+      }
+    }
+  }
+}
+</stringProp>
+                <stringProp name="GraphQLHTTPSampler.variables">{
+	&quot;limit&quot;: ${__groovy(vars.get(&quot;dataLimit&quot;))},
+	&quot;nextToken&quot;: ${__groovy(
+		if (vars.get(&quot;nextToken&quot;).toString() != &quot;null&quot;) return &apos;&quot;&apos; + vars.get(&quot;nextToken&quot;) + &apos;&quot;&apos;
+		else return &quot;null&quot;
+	)}
+}
+</stringProp>
+                <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              </HTTPSamplerProxy>
+              <hashTree>
+                <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Get nextToken" enabled="true">
+                  <stringProp name="JSONPostProcessor.referenceNames">nextToken</stringProp>
+                  <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.${__samplerName()}.nextToken</stringProp>
+                  <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+                  <stringProp name="JSONPostProcessor.defaultValues">null</stringProp>
+                </JSONPostProcessor>
+                <hashTree/>
+                <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Check errors" enabled="true">
+                  <collectionProp name="Asserion.test_strings">
+                    <stringProp name="329552226">errorType</stringProp>
+                  </collectionProp>
+                  <stringProp name="Assertion.custom_message"></stringProp>
+                  <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                  <boolProp name="Assertion.assume_success">false</boolProp>
+                  <intProp name="Assertion.test_type">6</intProp>
+                  <stringProp name="Assertion.scope">all</stringProp>
+                </ResponseAssertion>
+                <hashTree/>
+              </hashTree>
+            </hashTree>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Remove nextToken" enabled="true">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="977251861">Test Fragments</stringProp>
+                <stringProp name="-1824489883">Helpers</stringProp>
+                <stringProp name="1707321930">Remove nextToken</stringProp>
+              </collectionProp>
+            </ModuleController>
+            <hashTree/>
+          </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Get List Users" enabled="true"/>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="listUsers" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="limit" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${__groovy(vars.get(&quot;dataLimit&quot;))}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">limit</stringProp>
+                  </elementProp>
+                  <elementProp name="token" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">token</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">${hostUsers}</stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/test/listUsers</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Check errors" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="329552226">errorType</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">6</intProp>
+                <stringProp name="Assertion.scope">all</stringProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Get Bounds" enabled="true"/>
+          <hashTree>
+            <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While nextToken != null" enabled="true">
+              <stringProp name="WhileController.condition">${__groovy(vars.get(&quot;nextToken&quot;) != &quot;null&quot;)}</stringProp>
+            </WhileController>
+            <hashTree>
+              <HTTPSamplerProxy guiclass="GraphQLHTTPSamplerGui" testclass="HTTPSamplerProxy" testname="searchByBounds" enabled="true">
+                <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                  <collectionProp name="Arguments.arguments">
+                    <elementProp name="" elementType="HTTPArgument" enabled="true">
+                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                      <stringProp name="Argument.value">{&quot;operationName&quot;:null,&quot;variables&quot;:{
+	&quot;limit&quot;: ${__groovy(vars.get(&quot;dataLimit&quot;))},
+	&quot;nextToken&quot;: ${__groovy(
+		if (vars.get(&quot;nextToken&quot;).toString() != &quot;null&quot;) return &apos;&quot;&apos; + vars.get(&quot;nextToken&quot;) + &apos;&quot;&apos;
+		else return &quot;null&quot;
+	)},
+	&quot;bounds&quot;: {
+		&quot;bottom_right&quot;: {
+			&quot;lat&quot;: 37,
+			&quot;lon&quot;: 50
+		},
+		&quot;top_left&quot;: {
+			&quot;lat&quot;: 46,
+			&quot;lon&quot;: 39
+		}
+	}
+},&quot;query&quot;:&quot;query SearchByBounds($bounds: BoundsInput!, $limit: Int, $nextToken: String, $from: Int, $filter: SearchableFilterInput) {\n  searchByBounds(\n    bounds: $bounds\n    limit: $limit\n    nextToken: $nextToken\n    from: $from\n    filter: $filter\n  ) {\n    items {\n      id\n      name\n      description\n      city\n      street\n      address\n      images\n      point {\n        type\n        coordinates\n      }\n      location {\n        lat\n        lon\n      }\n      region\n      neighborhood\n      distance\n      status\n      i18n {\n        locale\n        name\n        description\n        city\n        street\n        address\n        region\n        neighborhood\n      }\n      statusUpdatedAt\n      createdAt\n      updatedAt\n      createdBy\n      updatedBy\n      owner\n      pets {\n        items {\n          id\n          petId\n          feedingPointId\n          createdAt\n          updatedAt\n          owner\n        }\n        nextToken\n      }\n      category {\n        id\n        name\n        icon\n        tag\n        i18n {\n          locale\n          name\n        }\n        createdAt\n        updatedAt\n        createdBy\n        updatedBy\n        owner\n      }\n      users {\n        items {\n          id\n          userId\n          feedingPointId\n          createdAt\n          updatedAt\n          owner\n        }\n        nextToken\n      }\n      feedings {\n        items {\n          id\n          userId\n          images\n          status\n          createdAt\n          updatedAt\n          createdBy\n          updatedBy\n          owner\n          feedingPointFeedingsId\n        }\n        nextToken\n      }\n      cover\n      feedingPointCategoryId\n    }\n    total\n    nextToken\n  }\n}&quot;}</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                      <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+                <stringProp name="HTTPSampler.domain">${host}</stringProp>
+                <stringProp name="HTTPSampler.port"></stringProp>
+                <stringProp name="HTTPSampler.protocol">https</stringProp>
+                <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                <stringProp name="HTTPSampler.path">/graphql</stringProp>
+                <stringProp name="HTTPSampler.method">POST</stringProp>
+                <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                <stringProp name="GraphQLHTTPSampler.operationName"></stringProp>
+                <stringProp name="GraphQLHTTPSampler.query">query SearchByBounds($bounds: BoundsInput!, $limit: Int, $nextToken: String, $from: Int, $filter: SearchableFilterInput) {
+  searchByBounds(
+    bounds: $bounds
+    limit: $limit
+    nextToken: $nextToken
+    from: $from
+    filter: $filter
+  ) {
+    items {
+      id
+      name
+      description
+      city
+      street
+      address
+      images
+      point {
+        type
+        coordinates
+      }
+      location {
+        lat
+        lon
+      }
+      region
+      neighborhood
+      distance
+      status
+      i18n {
+        locale
+        name
+        description
+        city
+        street
+        address
+        region
+        neighborhood
+      }
+      statusUpdatedAt
+      createdAt
+      updatedAt
+      createdBy
+      updatedBy
+      owner
+      pets {
+        items {
+          id
+          petId
+          feedingPointId
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+      }
+      category {
+        id
+        name
+        icon
+        tag
+        i18n {
+          locale
+          name
+        }
+        createdAt
+        updatedAt
+        createdBy
+        updatedBy
+        owner
+      }
+      users {
+        items {
+          id
+          userId
+          feedingPointId
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+      }
+      feedings {
+        items {
+          id
+          userId
+          images
+          status
+          createdAt
+          updatedAt
+          createdBy
+          updatedBy
+          owner
+          feedingPointFeedingsId
+        }
+        nextToken
+      }
+      cover
+      feedingPointCategoryId
+    }
+    total
+    nextToken
+  }
+}
+</stringProp>
+                <stringProp name="GraphQLHTTPSampler.variables">{
+	&quot;limit&quot;: ${__groovy(vars.get(&quot;dataLimit&quot;))},
+	&quot;nextToken&quot;: ${__groovy(
+		if (vars.get(&quot;nextToken&quot;).toString() != &quot;null&quot;) return &apos;&quot;&apos; + vars.get(&quot;nextToken&quot;) + &apos;&quot;&apos;
+		else return &quot;null&quot;
+	)},
+	&quot;bounds&quot;: {
+		&quot;bottom_right&quot;: {
+			&quot;lat&quot;: 37,
+			&quot;lon&quot;: 50
+		},
+		&quot;top_left&quot;: {
+			&quot;lat&quot;: 46,
+			&quot;lon&quot;: 39
+		}
+	}
+}
+</stringProp>
+                <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              </HTTPSamplerProxy>
+              <hashTree>
+                <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Get nextToken" enabled="true">
+                  <stringProp name="JSONPostProcessor.referenceNames">nextToken</stringProp>
+                  <stringProp name="JSONPostProcessor.jsonPathExprs">$.data.${__samplerName()}.nextToken</stringProp>
+                  <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+                  <stringProp name="JSONPostProcessor.defaultValues">null</stringProp>
+                </JSONPostProcessor>
+                <hashTree/>
+                <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Check errors" enabled="true">
+                  <collectionProp name="Asserion.test_strings">
+                    <stringProp name="329552226">errorType</stringProp>
+                  </collectionProp>
+                  <stringProp name="Assertion.custom_message"></stringProp>
+                  <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                  <boolProp name="Assertion.assume_success">false</boolProp>
+                  <intProp name="Assertion.test_type">6</intProp>
+                  <stringProp name="Assertion.scope">all</stringProp>
+                </ResponseAssertion>
+                <hashTree/>
+              </hashTree>
+            </hashTree>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Remove nextToken" enabled="true">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="977251861">Test Fragments</stringProp>
+                <stringProp name="-1824489883">Helpers</stringProp>
+                <stringProp name="1707321930">Remove nextToken</stringProp>
+              </collectionProp>
+            </ModuleController>
+            <hashTree/>
+          </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Get Geo" enabled="true"/>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="listGeo" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;FilterCountries&quot;:[&quot;GEO&quot;],&quot;MaxResults&quot;:${__groovy(vars.get(&quot;dataLimit&quot;))},&quot;Text&quot;:&quot;Tbilisi&quot;}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">${hostGeo}</stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/places/v0/indexes/animealindex-test/search/text</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Check errors" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="329552226">errorType</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">6</intProp>
+                <stringProp name="Assertion.scope">all</stringProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Create" enabled="true"/>
+        <hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Create Feeding Point" enabled="true"/>
+          <hashTree>
+            <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Latitude" enabled="true">
+              <stringProp name="maximumValue">9999</stringProp>
+              <stringProp name="minimumValue">6000</stringProp>
+              <stringProp name="outputFormat"></stringProp>
+              <boolProp name="perThread">true</boolProp>
+              <stringProp name="randomSeed"></stringProp>
+              <stringProp name="variableName">lat</stringProp>
+            </RandomVariableConfig>
+            <hashTree/>
+            <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Longitude" enabled="true">
+              <stringProp name="maximumValue">8500</stringProp>
+              <stringProp name="minimumValue">6000</stringProp>
+              <stringProp name="outputFormat"></stringProp>
+              <boolProp name="perThread">true</boolProp>
+              <stringProp name="randomSeed"></stringProp>
+              <stringProp name="variableName">lon</stringProp>
+            </RandomVariableConfig>
+            <hashTree/>
+            <HTTPSamplerProxy guiclass="GraphQLHTTPSamplerGui" testclass="HTTPSamplerProxy" testname="createFeedingPoint" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument" enabled="true">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;operationName&quot;:null,&quot;variables&quot;:{
+	&quot;input&quot;: {
+		&quot;name&quot;: &quot;${randomName} 44.${lon}-41.${lat}&quot;,
+		&quot;description&quot;: &quot;&lt;p&gt;Test&lt;/p&gt;&quot;,
+		&quot;images&quot;:[&quot;CrCvcSLztQn03_gR1aEqy.png&quot;],
+		&quot;status&quot;: &quot;starved&quot;,
+		&quot;point&quot;: {
+			&quot;type&quot;:&quot;Point&quot;,
+			&quot;coordinates&quot;: [&quot;44.${lon}&quot;,&quot;41.${lat}&quot;]
+		},
+		&quot;location&quot;: {
+			&quot;lon&quot;:&quot;44.${lon}&quot;,&quot;lat&quot;:&quot;41.${lat}&quot;
+		},
+		&quot;feedingPointCategoryId&quot;: &quot;${categoryID}&quot;,
+		&quot;city&quot;: &quot;Test&quot;,
+		&quot;region&quot;:&quot;Test&quot;,
+		&quot;distance&quot;:&quot;5&quot;,
+		&quot;neighborhood&quot;:&quot;Test&quot;,
+		&quot;address&quot;:&quot;Test&quot;,
+		&quot;street&quot;:&quot;${randomStreet}&quot;,
+		&quot;i18n&quot;:[],
+		&quot;owner&quot;:&quot;admin@epam.com&quot;,
+		&quot;createdBy&quot;:&quot;admin@epam.com&quot;,
+		&quot;statusUpdatedAt&quot;: &quot;2022-11-19T15:26:44.724Z&quot;,
+		&quot;cover&quot;:&quot;CrCvcSLztQn03_gR1aEqy.png&quot;
+	}
+},&quot;query&quot;:&quot;mutation CreateFeedingPoint($input: CreateFeedingPointInput!, $condition: ModelFeedingPointConditionInput) {\n  createFeedingPoint(input: $input, condition: $condition) {\n    id\n    name\n    description\n    city\n    street\n    address\n    images\n    point {\n      type\n      coordinates\n    }\n    location {\n      lat\n      lon\n    }\n    region\n    neighborhood\n    distance\n    status\n    i18n {\n      locale\n      name\n      description\n      city\n      street\n      address\n      region\n      neighborhood\n    }\n    statusUpdatedAt\n    createdAt\n    updatedAt\n    createdBy\n    updatedBy\n    owner\n    pets {\n      items {\n        id\n        petId\n        feedingPointId\n        pet {\n          id\n          name\n          images\n          breed\n          color\n          chipNumber\n          vaccinatedAt\n          yearOfBirth\n          createdAt\n          updatedAt\n          createdBy\n          updatedBy\n          owner\n          cover\n          petCategoryId\n        }\n        feedingPoint {\n          id\n          name\n          description\n          city\n          street\n          address\n          images\n          region\n          neighborhood\n          distance\n          status\n          statusUpdatedAt\n          createdAt\n          updatedAt\n          createdBy\n          updatedBy\n          owner\n          cover\n          feedingPointCategoryId\n        }\n        createdAt\n        updatedAt\n        owner\n      }\n      nextToken\n    }\n    category {\n      id\n      name\n      icon\n      tag\n      i18n {\n        locale\n        name\n      }\n      createdAt\n      updatedAt\n      createdBy\n      updatedBy\n      owner\n    }\n    users {\n      items {\n        id\n        userId\n        feedingPointId\n        feedingPoint {\n          id\n          name\n          description\n          city\n          street\n          address\n          images\n          region\n          neighborhood\n          distance\n          status\n          statusUpdatedAt\n          createdAt\n          updatedAt\n          createdBy\n          updatedBy\n          owner\n          cover\n          feedingPointCategoryId\n        }\n        createdAt\n        updatedAt\n        owner\n      }\n      nextToken\n    }\n    feedings {\n      items {\n        id\n        userId\n        images\n        status\n        createdAt\n        updatedAt\n        createdBy\n        updatedBy\n        owner\n        feedingPoint {\n          id\n          name\n          description\n          city\n          street\n          address\n          images\n          region\n          neighborhood\n          distance\n          status\n          statusUpdatedAt\n          createdAt\n          updatedAt\n          createdBy\n          updatedBy\n          owner\n          cover\n          feedingPointCategoryId\n        }\n        feedingPointFeedingsId\n      }\n      nextToken\n    }\n    cover\n    feedingPointCategoryId\n  }\n}&quot;}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">${host}</stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/graphql</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="GraphQLHTTPSampler.operationName"></stringProp>
+              <stringProp name="GraphQLHTTPSampler.query">mutation CreateFeedingPoint($input: CreateFeedingPointInput!, $condition: ModelFeedingPointConditionInput) {
+  createFeedingPoint(input: $input, condition: $condition) {
+    id
+    name
+    description
+    city
+    street
+    address
+    images
+    point {
+      type
+      coordinates
+    }
+    location {
+      lat
+      lon
+    }
+    region
+    neighborhood
+    distance
+    status
+    i18n {
+      locale
+      name
+      description
+      city
+      street
+      address
+      region
+      neighborhood
+    }
+    statusUpdatedAt
+    createdAt
+    updatedAt
+    createdBy
+    updatedBy
+    owner
+    pets {
+      items {
+        id
+        petId
+        feedingPointId
+        pet {
+          id
+          name
+          images
+          breed
+          color
+          chipNumber
+          vaccinatedAt
+          yearOfBirth
+          createdAt
+          updatedAt
+          createdBy
+          updatedBy
+          owner
+          cover
+          petCategoryId
+        }
+        feedingPoint {
+          id
+          name
+          description
+          city
+          street
+          address
+          images
+          region
+          neighborhood
+          distance
+          status
+          statusUpdatedAt
+          createdAt
+          updatedAt
+          createdBy
+          updatedBy
+          owner
+          cover
+          feedingPointCategoryId
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    category {
+      id
+      name
+      icon
+      tag
+      i18n {
+        locale
+        name
+      }
+      createdAt
+      updatedAt
+      createdBy
+      updatedBy
+      owner
+    }
+    users {
+      items {
+        id
+        userId
+        feedingPointId
+        feedingPoint {
+          id
+          name
+          description
+          city
+          street
+          address
+          images
+          region
+          neighborhood
+          distance
+          status
+          statusUpdatedAt
+          createdAt
+          updatedAt
+          createdBy
+          updatedBy
+          owner
+          cover
+          feedingPointCategoryId
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    feedings {
+      items {
+        id
+        userId
+        images
+        status
+        createdAt
+        updatedAt
+        createdBy
+        updatedBy
+        owner
+        feedingPoint {
+          id
+          name
+          description
+          city
+          street
+          address
+          images
+          region
+          neighborhood
+          distance
+          status
+          statusUpdatedAt
+          createdAt
+          updatedAt
+          createdBy
+          updatedBy
+          owner
+          cover
+          feedingPointCategoryId
+        }
+        feedingPointFeedingsId
+      }
+      nextToken
+    }
+    cover
+    feedingPointCategoryId
+  }
+}
+</stringProp>
+              <stringProp name="GraphQLHTTPSampler.variables">{
+	&quot;input&quot;: {
+		&quot;name&quot;: &quot;${randomName} 44.${lon}-41.${lat}&quot;,
+		&quot;description&quot;: &quot;&lt;p&gt;Test&lt;/p&gt;&quot;,
+		&quot;images&quot;:[&quot;CrCvcSLztQn03_gR1aEqy.png&quot;],
+		&quot;status&quot;: &quot;starved&quot;,
+		&quot;point&quot;: {
+			&quot;type&quot;:&quot;Point&quot;,
+			&quot;coordinates&quot;: [&quot;44.${lon}&quot;,&quot;41.${lat}&quot;]
+		},
+		&quot;location&quot;: {
+			&quot;lon&quot;:&quot;44.${lon}&quot;,&quot;lat&quot;:&quot;41.${lat}&quot;
+		},
+		&quot;feedingPointCategoryId&quot;: &quot;${categoryID}&quot;,
+		&quot;city&quot;: &quot;Test&quot;,
+		&quot;region&quot;:&quot;Test&quot;,
+		&quot;distance&quot;:&quot;5&quot;,
+		&quot;neighborhood&quot;:&quot;Test&quot;,
+		&quot;address&quot;:&quot;Test&quot;,
+		&quot;street&quot;:&quot;${randomStreet}&quot;,
+		&quot;i18n&quot;:[],
+		&quot;owner&quot;:&quot;admin@epam.com&quot;,
+		&quot;createdBy&quot;:&quot;admin@epam.com&quot;,
+		&quot;statusUpdatedAt&quot;: &quot;2022-11-19T15:26:44.724Z&quot;,
+		&quot;cover&quot;:&quot;CrCvcSLztQn03_gR1aEqy.png&quot;
+	}
+}</stringProp>
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="Random Text" enabled="true">
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="script">def generator = { String alphabet, int n -&gt;
+	new Random().with {
+		(1..n).collect { alphabet[ nextInt( alphabet.length() ) ] }.join()
+	}
+}
+vars.put(&quot;randomName&quot;, generator(((&apos;A&apos;..&apos;Z&apos;)+(&apos;0&apos;..&apos;9&apos;)).join(), 9))
+vars.put(&quot;randomStreet&quot;, generator(((&apos;A&apos;..&apos;Z&apos;)+(&apos;0&apos;..&apos;9&apos;)).join(), 9))</stringProp>
+                <stringProp name="scriptLanguage">groovy</stringProp>
+              </JSR223PreProcessor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Check errors" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1294635157">errors</stringProp>
+                  <stringProp name="329552226">errorType</stringProp>
+                  <stringProp name="954925063">message</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">6</intProp>
+                <stringProp name="Assertion.scope">all</stringProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Update" enabled="true"/>
+        <hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Update Feeding Point" enabled="true"/>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="GraphQLHTTPSamplerGui" testclass="HTTPSamplerProxy" testname="updateFeedingPoint" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument" enabled="true">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;operationName&quot;:null,&quot;variables&quot;:{
+	&quot;input&quot;: {
+		&quot;id&quot;: &quot;${pointID}&quot;,
+		&quot;name&quot;: &quot;${name}&quot;,
+		&quot;description&quot;: &quot;&lt;p&gt;Test updated&lt;/p&gt;&quot;,
+		&quot;feedingPointCategoryId&quot;: &quot;${categoryID}&quot;
+	}
+		
+},&quot;query&quot;:&quot;mutation UpdateFeedingPoint($input: UpdateFeedingPointInput!, $condition: ModelFeedingPointConditionInput) {\n  updateFeedingPoint(input: $input, condition: $condition) {\n    id\n    name\n    description\n    city\n    street\n    address\n    images\n    point {\n      type\n      coordinates\n    }\n    location {\n      lat\n      lon\n    }\n    region\n    neighborhood\n    distance\n    status\n    i18n {\n      locale\n      name\n      description\n      city\n      street\n      address\n      region\n      neighborhood\n    }\n    statusUpdatedAt\n    createdAt\n    updatedAt\n    createdBy\n    updatedBy\n    owner\n    pets {\n      items {\n        id\n        petId\n        feedingPointId\n        pet {\n          id\n          name\n          images\n          breed\n          color\n          chipNumber\n          vaccinatedAt\n          yearOfBirth\n          createdAt\n          updatedAt\n          createdBy\n          updatedBy\n          owner\n          cover\n          petCategoryId\n        }\n        feedingPoint {\n          id\n          name\n          description\n          city\n          street\n          address\n          images\n          region\n          neighborhood\n          distance\n          status\n          statusUpdatedAt\n          createdAt\n          updatedAt\n          createdBy\n          updatedBy\n          owner\n          cover\n          feedingPointCategoryId\n        }\n        createdAt\n        updatedAt\n        owner\n      }\n      nextToken\n    }\n    category {\n      id\n      name\n      icon\n      tag\n      i18n {\n        locale\n        name\n      }\n      createdAt\n      updatedAt\n      createdBy\n      updatedBy\n      owner\n    }\n    users {\n      items {\n        id\n        userId\n        feedingPointId\n        feedingPoint {\n          id\n          name\n          description\n          city\n          street\n          address\n          images\n          region\n          neighborhood\n          distance\n          status\n          statusUpdatedAt\n          createdAt\n          updatedAt\n          createdBy\n          updatedBy\n          owner\n          cover\n          feedingPointCategoryId\n        }\n        createdAt\n        updatedAt\n        owner\n      }\n      nextToken\n    }\n    feedings {\n      items {\n        id\n        userId\n        images\n        status\n        createdAt\n        updatedAt\n        createdBy\n        updatedBy\n        owner\n        feedingPoint {\n          id\n          name\n          description\n          city\n          street\n          address\n          images\n          region\n          neighborhood\n          distance\n          status\n          statusUpdatedAt\n          createdAt\n          updatedAt\n          createdBy\n          updatedBy\n          owner\n          cover\n          feedingPointCategoryId\n        }\n        feedingPointFeedingsId\n      }\n      nextToken\n    }\n    cover\n    feedingPointCategoryId\n  }\n}&quot;}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">${host}</stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/graphql</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="GraphQLHTTPSampler.operationName"></stringProp>
+              <stringProp name="GraphQLHTTPSampler.query">mutation UpdateFeedingPoint($input: UpdateFeedingPointInput!, $condition: ModelFeedingPointConditionInput) {
+  updateFeedingPoint(input: $input, condition: $condition) {
+    id
+    name
+    description
+    city
+    street
+    address
+    images
+    point {
+      type
+      coordinates
+    }
+    location {
+      lat
+      lon
+    }
+    region
+    neighborhood
+    distance
+    status
+    i18n {
+      locale
+      name
+      description
+      city
+      street
+      address
+      region
+      neighborhood
+    }
+    statusUpdatedAt
+    createdAt
+    updatedAt
+    createdBy
+    updatedBy
+    owner
+    pets {
+      items {
+        id
+        petId
+        feedingPointId
+        pet {
+          id
+          name
+          images
+          breed
+          color
+          chipNumber
+          vaccinatedAt
+          yearOfBirth
+          createdAt
+          updatedAt
+          createdBy
+          updatedBy
+          owner
+          cover
+          petCategoryId
+        }
+        feedingPoint {
+          id
+          name
+          description
+          city
+          street
+          address
+          images
+          region
+          neighborhood
+          distance
+          status
+          statusUpdatedAt
+          createdAt
+          updatedAt
+          createdBy
+          updatedBy
+          owner
+          cover
+          feedingPointCategoryId
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    category {
+      id
+      name
+      icon
+      tag
+      i18n {
+        locale
+        name
+      }
+      createdAt
+      updatedAt
+      createdBy
+      updatedBy
+      owner
+    }
+    users {
+      items {
+        id
+        userId
+        feedingPointId
+        feedingPoint {
+          id
+          name
+          description
+          city
+          street
+          address
+          images
+          region
+          neighborhood
+          distance
+          status
+          statusUpdatedAt
+          createdAt
+          updatedAt
+          createdBy
+          updatedBy
+          owner
+          cover
+          feedingPointCategoryId
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    feedings {
+      items {
+        id
+        userId
+        images
+        status
+        createdAt
+        updatedAt
+        createdBy
+        updatedBy
+        owner
+        feedingPoint {
+          id
+          name
+          description
+          city
+          street
+          address
+          images
+          region
+          neighborhood
+          distance
+          status
+          statusUpdatedAt
+          createdAt
+          updatedAt
+          createdBy
+          updatedBy
+          owner
+          cover
+          feedingPointCategoryId
+        }
+        feedingPointFeedingsId
+      }
+      nextToken
+    }
+    cover
+    feedingPointCategoryId
+  }
+}
+</stringProp>
+              <stringProp name="GraphQLHTTPSampler.variables">{
+	&quot;input&quot;: {
+		&quot;id&quot;: &quot;${pointID}&quot;,
+		&quot;name&quot;: &quot;${name}&quot;,
+		&quot;description&quot;: &quot;&lt;p&gt;Test updated&lt;/p&gt;&quot;,
+		&quot;feedingPointCategoryId&quot;: &quot;${categoryID}&quot;
+	}
+		
+}</stringProp>
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Check errors" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1294635157">errors</stringProp>
+                  <stringProp name="329552226">errorType</stringProp>
+                  <stringProp name="954925063">message</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">6</intProp>
+                <stringProp name="Assertion.scope">all</stringProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Delete" enabled="true"/>
+        <hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Delete Feeding Point" enabled="true"/>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="GraphQLHTTPSamplerGui" testclass="HTTPSamplerProxy" testname="deleteFeedingPoint" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument" enabled="true">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;operationName&quot;:null,&quot;variables&quot;:{
+	&quot;input&quot;: {
+		&quot;id&quot;: &quot;${pointID}&quot;
+	}
+		
+},&quot;query&quot;:&quot;mutation DeleteFeedingPoint($input: DeleteFeedingPointInput!, $condition: ModelFeedingPointConditionInput) {\n  deleteFeedingPoint(input: $input, condition: $condition) {\n    id\n    name\n    description\n    city\n    street\n    address\n    images\n    point {\n      type\n      coordinates\n    }\n    location {\n      lat\n      lon\n    }\n    region\n    neighborhood\n    distance\n    status\n    i18n {\n      locale\n      name\n      description\n      city\n      street\n      address\n      region\n      neighborhood\n    }\n    statusUpdatedAt\n    createdAt\n    updatedAt\n    createdBy\n    updatedBy\n    owner\n    pets {\n      items {\n        id\n        petId\n        feedingPointId\n        pet {\n          id\n          name\n          images\n          breed\n          color\n          chipNumber\n          vaccinatedAt\n          yearOfBirth\n          createdAt\n          updatedAt\n          createdBy\n          updatedBy\n          owner\n          cover\n          petCategoryId\n        }\n        feedingPoint {\n          id\n          name\n          description\n          city\n          street\n          address\n          images\n          region\n          neighborhood\n          distance\n          status\n          statusUpdatedAt\n          createdAt\n          updatedAt\n          createdBy\n          updatedBy\n          owner\n          cover\n          feedingPointCategoryId\n        }\n        createdAt\n        updatedAt\n        owner\n      }\n      nextToken\n    }\n    category {\n      id\n      name\n      icon\n      tag\n      i18n {\n        locale\n        name\n      }\n      createdAt\n      updatedAt\n      createdBy\n      updatedBy\n      owner\n    }\n    users {\n      items {\n        id\n        userId\n        feedingPointId\n        feedingPoint {\n          id\n          name\n          description\n          city\n          street\n          address\n          images\n          region\n          neighborhood\n          distance\n          status\n          statusUpdatedAt\n          createdAt\n          updatedAt\n          createdBy\n          updatedBy\n          owner\n          cover\n          feedingPointCategoryId\n        }\n        createdAt\n        updatedAt\n        owner\n      }\n      nextToken\n    }\n    feedings {\n      items {\n        id\n        userId\n        images\n        status\n        createdAt\n        updatedAt\n        createdBy\n        updatedBy\n        owner\n        feedingPoint {\n          id\n          name\n          description\n          city\n          street\n          address\n          images\n          region\n          neighborhood\n          distance\n          status\n          statusUpdatedAt\n          createdAt\n          updatedAt\n          createdBy\n          updatedBy\n          owner\n          cover\n          feedingPointCategoryId\n        }\n        feedingPointFeedingsId\n      }\n      nextToken\n    }\n    cover\n    feedingPointCategoryId\n  }\n}&quot;}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">${host}</stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol">https</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/graphql</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="GraphQLHTTPSampler.operationName"></stringProp>
+              <stringProp name="GraphQLHTTPSampler.query">mutation DeleteFeedingPoint($input: DeleteFeedingPointInput!, $condition: ModelFeedingPointConditionInput) {
+  deleteFeedingPoint(input: $input, condition: $condition) {
+    id
+    name
+    description
+    city
+    street
+    address
+    images
+    point {
+      type
+      coordinates
+    }
+    location {
+      lat
+      lon
+    }
+    region
+    neighborhood
+    distance
+    status
+    i18n {
+      locale
+      name
+      description
+      city
+      street
+      address
+      region
+      neighborhood
+    }
+    statusUpdatedAt
+    createdAt
+    updatedAt
+    createdBy
+    updatedBy
+    owner
+    pets {
+      items {
+        id
+        petId
+        feedingPointId
+        pet {
+          id
+          name
+          images
+          breed
+          color
+          chipNumber
+          vaccinatedAt
+          yearOfBirth
+          createdAt
+          updatedAt
+          createdBy
+          updatedBy
+          owner
+          cover
+          petCategoryId
+        }
+        feedingPoint {
+          id
+          name
+          description
+          city
+          street
+          address
+          images
+          region
+          neighborhood
+          distance
+          status
+          statusUpdatedAt
+          createdAt
+          updatedAt
+          createdBy
+          updatedBy
+          owner
+          cover
+          feedingPointCategoryId
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    category {
+      id
+      name
+      icon
+      tag
+      i18n {
+        locale
+        name
+      }
+      createdAt
+      updatedAt
+      createdBy
+      updatedBy
+      owner
+    }
+    users {
+      items {
+        id
+        userId
+        feedingPointId
+        feedingPoint {
+          id
+          name
+          description
+          city
+          street
+          address
+          images
+          region
+          neighborhood
+          distance
+          status
+          statusUpdatedAt
+          createdAt
+          updatedAt
+          createdBy
+          updatedBy
+          owner
+          cover
+          feedingPointCategoryId
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    feedings {
+      items {
+        id
+        userId
+        images
+        status
+        createdAt
+        updatedAt
+        createdBy
+        updatedBy
+        owner
+        feedingPoint {
+          id
+          name
+          description
+          city
+          street
+          address
+          images
+          region
+          neighborhood
+          distance
+          status
+          statusUpdatedAt
+          createdAt
+          updatedAt
+          createdBy
+          updatedBy
+          owner
+          cover
+          feedingPointCategoryId
+        }
+        feedingPointFeedingsId
+      }
+      nextToken
+    }
+    cover
+    feedingPointCategoryId
+  }
+}
+</stringProp>
+              <stringProp name="GraphQLHTTPSampler.variables">{
+	&quot;input&quot;: {
+		&quot;id&quot;: &quot;${pointID}&quot;
+	}
+		
+}</stringProp>
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Check errors" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1294635157">errors</stringProp>
+                  <stringProp name="329552226">errorType</stringProp>
+                  <stringProp name="954925063">message</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">6</intProp>
+                <stringProp name="Assertion.scope">all</stringProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Helpers" enabled="true"/>
+        <hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Remove nextToken" enabled="true"/>
+          <hashTree>
+            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Remove nextToken" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">vars.remove(&quot;nextToken&quot;);</stringProp>
+            </JSR223Sampler>
+            <hashTree>
+              <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Ignore Sampler" enabled="true">
+                <stringProp name="scriptLanguage">groovy</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="script">prev.setIgnore();</stringProp>
+              </JSR223PostProcessor>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Sleep" enabled="true"/>
+          <hashTree>
+            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Sleep" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">Thread.sleep(vars.get(&quot;sleep&quot;).toInteger());</stringProp>
+            </JSR223Sampler>
+            <hashTree>
+              <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Ignore Sampler" enabled="true">
+                <stringProp name="scriptLanguage">groovy</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="script">prev.setIgnore();</stringProp>
+              </JSR223PostProcessor>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="SleepLong" enabled="true"/>
+          <hashTree>
+            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Sleep" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">Thread.sleep(vars.get(&quot;sleep&quot;).toInteger()*5);</stringProp>
+            </JSR223Sampler>
+            <hashTree>
+              <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Ignore Sampler" enabled="true">
+                <stringProp name="scriptLanguage">groovy</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="cacheKey">true</stringProp>
+                <stringProp name="script">prev.setIgnore();</stringProp>
+              </JSR223PostProcessor>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="Admin Thread" enabled="true">
+        <collectionProp name="ultimatethreadgroupdata">
+          <collectionProp name="664335397">
+            <stringProp name="-1316802907">${admin}</stringProp>
+            <stringProp name="48">0</stringProp>
+            <stringProp name="176080475">${__groovy(vars.get(&quot;admin&quot;).toInteger()*vars.get(&quot;rampup&quot;).toInteger())}</stringProp>
+            <stringProp name="433932617">${__groovy((vars.get(&quot;admin&quot;).toInteger()+vars.get(&quot;volunteer&quot;).toInteger())*vars.get(&quot;rampup&quot;).toInteger()+vars.get(&quot;hold&quot;).toInteger())}</stringProp>
+            <stringProp name="-49196231">${rampup}</stringProp>
+          </collectionProp>
+        </collectionProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+      </kg.apc.jmeter.threads.UltimateThreadGroup>
+      <hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Start Page" enabled="true"/>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Get List Languages" enabled="true">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="977251861">Test Fragments</stringProp>
+              <stringProp name="2543030">Read</stringProp>
+              <stringProp name="-232519357">Get List Languages</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Get List Languages Settings" enabled="true">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="977251861">Test Fragments</stringProp>
+              <stringProp name="2543030">Read</stringProp>
+              <stringProp name="-1669746048">Get List Languages Settings</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Get Categories" enabled="true">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="977251861">Test Fragments</stringProp>
+              <stringProp name="2543030">Read</stringProp>
+              <stringProp name="-1688017562">Get Categories</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Get Feeding Points" enabled="true">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="977251861">Test Fragments</stringProp>
+              <stringProp name="2543030">Read</stringProp>
+              <stringProp name="-1233405591">Get Feeding Points</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+        </hashTree>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Sleep" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="977251861">Test Fragments</stringProp>
+            <stringProp name="-1824489883">Helpers</stringProp>
+            <stringProp name="79969975">Sleep</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Feeding points" enabled="true"/>
+        <hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Read Feeding Point" enabled="true"/>
+          <hashTree>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Get Feeding Points" enabled="true">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="977251861">Test Fragments</stringProp>
+                <stringProp name="2543030">Read</stringProp>
+                <stringProp name="-1233405591">Get Feeding Points</stringProp>
+              </collectionProp>
+            </ModuleController>
+            <hashTree/>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Get Feeding Point" enabled="true">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="977251861">Test Fragments</stringProp>
+                <stringProp name="2543030">Read</stringProp>
+                <stringProp name="-1286713270">Get Feeding Point</stringProp>
+              </collectionProp>
+            </ModuleController>
+            <hashTree/>
+          </hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Sleep" enabled="true">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="977251861">Test Fragments</stringProp>
+              <stringProp name="-1824489883">Helpers</stringProp>
+              <stringProp name="79969975">Sleep</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Add Feeding Point" enabled="true"/>
+          <hashTree>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Get Pets" enabled="true">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="977251861">Test Fragments</stringProp>
+                <stringProp name="2543030">Read</stringProp>
+                <stringProp name="1982059006">Get Pets</stringProp>
+              </collectionProp>
+            </ModuleController>
+            <hashTree/>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Get List Users" enabled="false">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="977251861">Test Fragments</stringProp>
+                <stringProp name="2543030">Read</stringProp>
+                <stringProp name="186749744">Get List Users</stringProp>
+              </collectionProp>
+            </ModuleController>
+            <hashTree/>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Get Bounds" enabled="true">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="977251861">Test Fragments</stringProp>
+                <stringProp name="2543030">Read</stringProp>
+                <stringProp name="1696647935">Get Bounds</stringProp>
+              </collectionProp>
+            </ModuleController>
+            <hashTree/>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Get Geo" enabled="false">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="977251861">Test Fragments</stringProp>
+                <stringProp name="2543030">Read</stringProp>
+                <stringProp name="1587949383">Get Geo</stringProp>
+              </collectionProp>
+            </ModuleController>
+            <hashTree/>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Get Bounds" enabled="true">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="977251861">Test Fragments</stringProp>
+                <stringProp name="2543030">Read</stringProp>
+                <stringProp name="1696647935">Get Bounds</stringProp>
+              </collectionProp>
+            </ModuleController>
+            <hashTree/>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Create Feeding Point" enabled="true">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="977251861">Test Fragments</stringProp>
+                <stringProp name="2026540316">Create</stringProp>
+                <stringProp name="-1693942864">Create Feeding Point</stringProp>
+              </collectionProp>
+            </ModuleController>
+            <hashTree/>
+          </hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Sleep" enabled="true">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="977251861">Test Fragments</stringProp>
+              <stringProp name="-1824489883">Helpers</stringProp>
+              <stringProp name="79969975">Sleep</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Update Feeding Point" enabled="true"/>
+          <hashTree>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Get Feeding Points" enabled="true">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="977251861">Test Fragments</stringProp>
+                <stringProp name="2543030">Read</stringProp>
+                <stringProp name="-1233405591">Get Feeding Points</stringProp>
+              </collectionProp>
+            </ModuleController>
+            <hashTree/>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Get Feeding Point" enabled="true">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="977251861">Test Fragments</stringProp>
+                <stringProp name="2543030">Read</stringProp>
+                <stringProp name="-1286713270">Get Feeding Point</stringProp>
+              </collectionProp>
+            </ModuleController>
+            <hashTree/>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Get Pets" enabled="true">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="977251861">Test Fragments</stringProp>
+                <stringProp name="2543030">Read</stringProp>
+                <stringProp name="1982059006">Get Pets</stringProp>
+              </collectionProp>
+            </ModuleController>
+            <hashTree/>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Get Bounds" enabled="true">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="977251861">Test Fragments</stringProp>
+                <stringProp name="2543030">Read</stringProp>
+                <stringProp name="1696647935">Get Bounds</stringProp>
+              </collectionProp>
+            </ModuleController>
+            <hashTree/>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Update Feeding Point" enabled="true">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="977251861">Test Fragments</stringProp>
+                <stringProp name="-1754979095">Update</stringProp>
+                <stringProp name="-2071795523">Update Feeding Point</stringProp>
+              </collectionProp>
+            </ModuleController>
+            <hashTree/>
+          </hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Sleep" enabled="true">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="977251861">Test Fragments</stringProp>
+              <stringProp name="-1824489883">Helpers</stringProp>
+              <stringProp name="79969975">Sleep</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Delete Feeding Point" enabled="true"/>
+          <hashTree>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Get Feeding Points" enabled="true">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="977251861">Test Fragments</stringProp>
+                <stringProp name="2543030">Read</stringProp>
+                <stringProp name="-1233405591">Get Feeding Points</stringProp>
+              </collectionProp>
+            </ModuleController>
+            <hashTree/>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Get Feeding Point" enabled="true">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="977251861">Test Fragments</stringProp>
+                <stringProp name="2543030">Read</stringProp>
+                <stringProp name="-1286713270">Get Feeding Point</stringProp>
+              </collectionProp>
+            </ModuleController>
+            <hashTree/>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Delete Feeding Point" enabled="true">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="977251861">Test Fragments</stringProp>
+                <stringProp name="2043376075">Delete</stringProp>
+                <stringProp name="-1280835041">Delete Feeding Point</stringProp>
+              </collectionProp>
+            </ModuleController>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Sleep" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="977251861">Test Fragments</stringProp>
+            <stringProp name="-1824489883">Helpers</stringProp>
+            <stringProp name="79969975">Sleep</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
+      </hashTree>
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="Volunteer Thread" enabled="true">
+        <collectionProp name="ultimatethreadgroupdata">
+          <collectionProp name="952876716">
+            <stringProp name="1155701322">${volunteer}</stringProp>
+            <stringProp name="48">0</stringProp>
+            <stringProp name="-125170624">${__groovy(vars.get(&quot;volunteer&quot;).toInteger()*vars.get(&quot;rampup&quot;).toInteger())}</stringProp>
+            <stringProp name="1211239719">${hold}</stringProp>
+            <stringProp name="-49196231">${rampup}</stringProp>
+          </collectionProp>
+        </collectionProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+      </kg.apc.jmeter.threads.UltimateThreadGroup>
+      <hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Start Page" enabled="true"/>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Get List Languages" enabled="true">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="977251861">Test Fragments</stringProp>
+              <stringProp name="2543030">Read</stringProp>
+              <stringProp name="-232519357">Get List Languages</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Get List Languages Settings" enabled="true">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="977251861">Test Fragments</stringProp>
+              <stringProp name="2543030">Read</stringProp>
+              <stringProp name="-1669746048">Get List Languages Settings</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Get Categories" enabled="true">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="977251861">Test Fragments</stringProp>
+              <stringProp name="2543030">Read</stringProp>
+              <stringProp name="-1688017562">Get Categories</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Get Feeding Points" enabled="true">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="977251861">Test Fragments</stringProp>
+              <stringProp name="2543030">Read</stringProp>
+              <stringProp name="-1233405591">Get Feeding Points</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+        </hashTree>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Sleep" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="977251861">Test Fragments</stringProp>
+            <stringProp name="-1824489883">Helpers</stringProp>
+            <stringProp name="79969975">Sleep</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Feeding points" enabled="true"/>
+        <hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Read Feeding Point" enabled="true"/>
+          <hashTree>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Get Feeding Points" enabled="true">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="977251861">Test Fragments</stringProp>
+                <stringProp name="2543030">Read</stringProp>
+                <stringProp name="-1233405591">Get Feeding Points</stringProp>
+              </collectionProp>
+            </ModuleController>
+            <hashTree/>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Sleep" enabled="true">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="977251861">Test Fragments</stringProp>
+                <stringProp name="-1824489883">Helpers</stringProp>
+                <stringProp name="79969975">Sleep</stringProp>
+              </collectionProp>
+            </ModuleController>
+            <hashTree/>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Get Feeding Point" enabled="true">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="977251861">Test Fragments</stringProp>
+                <stringProp name="2543030">Read</stringProp>
+                <stringProp name="-1286713270">Get Feeding Point</stringProp>
+              </collectionProp>
+            </ModuleController>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Sleep" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="977251861">Test Fragments</stringProp>
+            <stringProp name="-1824489883">Helpers</stringProp>
+            <stringProp name="1991001555">SleepLong</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Get Feeding Point" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="977251861">Test Fragments</stringProp>
+            <stringProp name="2543030">Read</stringProp>
+            <stringProp name="-1286713270">Get Feeding Point</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Sleep" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="977251861">Test Fragments</stringProp>
+            <stringProp name="-1824489883">Helpers</stringProp>
+            <stringProp name="1991001555">SleepLong</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
